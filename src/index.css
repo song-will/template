@@ -1,0 +1,8 @@
+div.wrapper {
+    color: red;
+    width: 200px;
+    height: 200px;
+    background: url(./assets/imgs/webpack.png) no-repeat;
+    background-size: 100%; 
+    background-position: center center;
+}
