@@ -1,17 +1,13 @@
-const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const webpack  = require('webpack')
+const resolve = require('./utils').resolve
 
-function resolve (dir) {
-    return path.join(__dirname, '..', dir)
-}
 
 module.exports = {
     entry: './src/index.js',
     output: {
-        filename: '[name].js',
-        path: resolve('dist')
+        filename: '[name].js'
     },
     resolve: {
         extensions: ['.js', '.jsx', '.vue', 'json'],
@@ -53,7 +49,8 @@ module.exports = {
         new CleanWebpackPlugin(),
         // 生成新的html文件
         new HtmlWebpackPlugin({
-            title: 'webpack'
+            title: 'webpack',
+            template: resolve('index.html')
         })
     ]
 }
